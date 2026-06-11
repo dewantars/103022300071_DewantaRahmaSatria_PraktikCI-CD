@@ -46,5 +46,10 @@ jobs:
         name: test-results
         path: target/surefire-reports/
 
+    - name: Analyze with SonarCloud
+      env:
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      run: mvn sonar:sonar -Dsonar.projectKey=103022300071_DewantaRahmaSatria_PraktikCI-CD -Dsonar.organization=dewantars -Dsonar.host.url=https://sonarcloud.io
+
     
 
